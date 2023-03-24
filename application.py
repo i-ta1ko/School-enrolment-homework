@@ -27,21 +27,21 @@ def load_data():
 
     with open('project_files/students.csv', 'r') as f:
         reader = csv.reader(f)
-        next(reader) 
+        next(reader) # skip header row
         for row in reader:
             id, name, email = row
             students[id] = Student(id, name, email)
 
     with open('project_files/courses.csv', 'r') as f:
         reader = csv.reader(f)
-        next(reader) 
+        next(reader) # skip header row
         for row in reader:
             id, name, credit = row
             courses[id] = Course(id, name, credit)
 
     with open('project_files/enrollments.csv', 'r') as f:
         reader = csv.reader(f)
-        next(reader) 
+        next(reader) # skip header row
         for row in reader:
             student_id, course_id, semester, grade = row
             enrollment = Enrollment(student_id, course_id, semester, grade)
